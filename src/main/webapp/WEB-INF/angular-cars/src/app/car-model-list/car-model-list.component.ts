@@ -26,4 +26,9 @@ export class CarModelListComponent implements OnInit {
     });
   }
 
+  delete(car: Car) {
+    this.service.delete(car)
+      .then(response => this.ngOnInit())
+  }
+
 }

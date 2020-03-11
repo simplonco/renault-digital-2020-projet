@@ -1,6 +1,22 @@
-<h1><a routerLink="/">Cars</a></h1>
 <div>
-  <button *ngFor="let brand of brands" [routerLink]="['/cars', brand]">{{brand}}</button>
+  <h1><a routerLink="/">Cars</a></h1>
+  <app-brand-list></app-brand-list>
+  <div>
+    <h2>Create</h2>
+    <form>
+      <label>
+        model
+        <input type="text">
+      </label>
+      <label>
+        brand
+        <input type="text">
+      </label>
+      <button>send</button>
+    </form>
+  </div>
+  <div>
+    <h2>List</h2>
+    <router-outlet></router-outlet>
+  </div>
 </div>
-<h2>List</h2>
-<router-outlet></router-outlet>
