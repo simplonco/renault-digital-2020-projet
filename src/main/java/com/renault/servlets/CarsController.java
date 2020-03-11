@@ -11,20 +11,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServlet;
 import java.util.List;
+import java.util.Set;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/cars")
-@CrossOrigin
 public class CarsController extends HttpServlet {
 
-  @Autowired
-  private CarsRepository carsRepository;
+    @Autowired
+    private CarsRepository carsRepository;
 
-  @GetMapping("/{brand}")
-  public List<Car> get(@PathVariable("brand") String brand) {
-    return carsRepository.findByBrand(brand);
-  }
+    @GetMapping("/brands/")
+    public Set<String> findBrands() {
+        return carsRepository.findBrands();
+    }
 
-
+    @GetMapping("/brands/{brand}")
+    public List<Car> findCarsByBrand(@PathVariable("brand") String brand) {
+        return carsRepository.findCarsByBrand(brand);
+    }
 
 }

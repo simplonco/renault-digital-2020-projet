@@ -11,7 +11,7 @@ import java.util.Set;
 @Repository
 public interface CarsRepository extends JpaRepository<Car, Integer> {
 
-    List<Car> findByBrand(String brand);
+    List<Car> findCarsByBrand(String brand);
 
     @Query("SELECT c.brand FROM cars c")
     Set<String> findBrands();
