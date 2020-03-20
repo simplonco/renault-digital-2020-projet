@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CarsService} from "../cars.service";
 
 @Component({
@@ -10,11 +10,14 @@ export class BrandListComponent implements OnInit {
 
   brands: string[];
 
-  constructor(private service: CarsService) {
+  constructor(private carsService: CarsService) {
+    this.carsService.carObversable.subscribe(car => {
+      this.ngOnInit();
+    })
   }
 
   ngOnInit(): void {
-    this.service.findBrands()
+    this.carsService.findBrands()
       .then(response => response.json())
       .then(response => this.brands = response)
   }

@@ -3,14 +3,10 @@ package com.renault.servlets;
 import com.renault.model.Car;
 import com.renault.service.CarsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServlet;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Set;
 
@@ -22,7 +18,12 @@ public class CarsController extends HttpServlet {
     @Autowired
     private CarsRepository carsRepository;
 
-    @PostMapping("/{id}")
+    @PostMapping("/")
+    public void insertCar(@RequestBody @Valid Car car) {
+        carsRepository.save(car);
+    }
+
+    @DeleteMapping("/{id}")
     public void deleteCar(@PathVariable("id") int id) {
         carsRepository.deleteById(id);
     }

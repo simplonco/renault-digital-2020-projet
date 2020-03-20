@@ -12,23 +12,24 @@ export class CarModelListComponent implements OnInit {
 
   cars: Car[];
 
-  constructor(
-    private route: ActivatedRoute,
-    private service: CarsService
-  ) {
+  constructor(private route: ActivatedRoute,
+              private carsService: CarsService) {
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.service.findCarsByBrand(params["brand"])
+      this.carsService.findCarsByBrand(params["brand"])
         .then(response => response.json())
         .then(response => this.cars = response)
     });
   }
 
   delete(car: Car) {
-    this.service.delete(car)
-      .then(response => this.ngOnInit())
+    this.carsService.delete(car)
+      .then(response => {
+        this.carsService.carObverver.next(car);
+        this.ngOnInit();
+      })
   }
 
 }

@@ -88,6 +88,12 @@ Change the Servlet to a controller, deploy the Spring application to a Tomcat (h
 ./gradlew deployToTomcat
 ```
 
+### Configuration
+
+BDD TODO
+
+- jdbc:postgresql://localhost:5432/cars
+
 ## References
 
 ![MVC](https://i.stack.imgur.com/pENZD.png)

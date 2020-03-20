@@ -1,0 +1,6 @@
+#brand.ng-invalid, #model.ng-invalid {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+#brand.ng-valid, #model.ng-valid {
+  background-color: rgba(0, 255, 0, 0.2);
+}
