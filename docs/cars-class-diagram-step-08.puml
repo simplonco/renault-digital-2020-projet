@@ -1,0 +1,29 @@
+@startuml
+
+skinparam class {
+	BackgroundColor White
+	ArrowColor DarkSlateGray
+	BorderColor DarkSlateGray
+}
+
+class Car {
+    + id : int
+    + brand : String
+    + model : String
+}
+
+class Owner {
+    + id : int
+    + name : String
+}
+
+class Dealership {
+    + id : int
+    + name : String
+    + address : String
+}
+
+Car *- "1" Owner
+Car "*" *-* "*" Dealership : sells
+
+@enduml

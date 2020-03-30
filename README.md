@@ -2,6 +2,31 @@
 
 Implement a car client / server application.
 
+## Installation
+
+En utilisant MySQL:
+
+- Installer [docker](https://www.docker.com/get-started)
+- Exécuter la dernière image mysql `docker run --name mysql_renault -e MYSQL_ROOT_PASSWORD=12345 -d mysql:latest`
+- S'assurer que l'image "mysql_renault" s'exécute avec `docker ps` (copier / coller le port dans application.yml)
+- Trouver l'IP du container docker `docker inspect mysql_renault` (copier / coller le port dans application.yml)
+
+En utilisant Postgresql
+
+- Utiliser l'installation de Frank (mettre les bonnes valeurs dans application.yml)
+
+## Démarrer le serveur
+
+Configurer la bdd dans [application.yml](./src/main/resources/application.yml) avec la bdd choisie. Démarrer le serveur Spring Boot ([http://localhost:8008](http://localhost:8008)):
+
+```bash
+# Linux & MacOS
+./gradlew bootRun
+
+# Windows
+gradlew bootRun
+```
+
 ## TODO
 
 ### Step 1 (semaine 3)
@@ -78,23 +103,46 @@ Bonus (CMS):
 - Add a "Add new vehicule" button
 - Add a "Modify vehicule" button
 
-### Step 5 (semaine 7)
+### Step 5 (semaine 8)
 
 Change the Servlet to a controller, deploy the Spring application to a Tomcat (https://www.baeldung.com/spring-boot-war-tomcat-deploy).
 
-## Deploy
+### Step 6 (semaine 9)
 
-```bash
-./gradlew deployToTomcat
-```
+Migrate the application to angular (step 1):
 
-### Configuration
+- Create a root component for the app
+- Create a BrandList component for the brands list
+- Create a CarList component for the cars list
+- Uses fetch to GET the backend
 
-BDD TODO
+### Step 7 (semaine 10)
 
-- jdbc:postgresql://localhost:5432/cars
+Add DELETE and POST:
 
-## References
+- Add a delete button for each car (frontend and backend)
+- Add a create form to create a new car (frontend and backend)
+- Update components states when a new car (and brand) is created or deleted
 
-![MVC](https://i.stack.imgur.com/pENZD.png)
+### Step 8 (semaine 12)
 
+![Cars class diagram - Step 8](docs/cars_class_diagram_step_08.svg)
+
+Make sure the application is split into the following packages:
+
+- `com.renault.controllers`
+- `com.renault.dtos`
+- `com.renault.entities`
+- `com.renault.repositories`
+- `com.renault.services`
+
+A car has a owner (a Owner has a name) and dealerships (a Dealership has an address):
+
+- Add the Owner entity
+    - Add the required properties (name)
+    - Add its relation to the Car entity
+    - Add a form in the UI to add an owner to a car
+- Add the Dealership entity
+    - Add the required properties (address)
+    - Add its relation to the Car entity
+    - Add a form in the UI to make a dealership sell a car

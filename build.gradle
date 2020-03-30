@@ -2,15 +2,18 @@ plugins {
     id "org.springframework.boot" version "2.2.4.RELEASE"
 }
 
+repositories {
+    mavenCentral()
+}
+
 apply plugin: "java"
 apply plugin: "eclipse"
 apply plugin: "idea"
 apply plugin: "war"
 apply plugin: "io.spring.dependency-management"
 
-repositories {
-    mavenCentral()
-}
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
 
 dependencies {
     // Servlet
@@ -26,6 +29,8 @@ dependencies {
 
     // JDBC mysql
     compile "mysql:mysql-connector-java:8.0.19"
+    compile "org.postgresql:postgresql:42.2.11"
+    compile "com.h2database:h2:1.4.200"
 
     // Json
     compile "javax.json:javax.json-api:1.1.4"
@@ -39,13 +44,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-war {
-    enabled = true
-}
-
-task deployToTomcat(type: Copy) {
-    from war.getArchiveFile()
-    into "/home/alex/Programs/apache-tomcat-9.0.30-renault/webapps"
-}
-
