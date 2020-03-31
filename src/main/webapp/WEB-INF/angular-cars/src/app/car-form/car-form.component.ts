@@ -25,7 +25,7 @@ export class CarFormComponent implements OnInit {
       .subscribe(value => {
         this.carsService.carObverver.next(this.car);
         this.message = `Car ${this.car.brand} ${this.car.model} added`;
-        // this.car = new Car();
+        this.car = new Car();
       });
   }
 
