@@ -1,7 +1,6 @@
 package com.renault;
 
-import com.renault.service.CarsDatabaseInsert;
-import com.renault.service.CarsRepository;
+import com.renault.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,20 +9,20 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class Application extends SpringBootServletInitializer {
+public class CarsApplication extends SpringBootServletInitializer {
 
     @Autowired
-    private CarsRepository carsRepository;
+    private ApplicationService applicationService;
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(CarsApplication.class, args);
     }
 
     @Bean
     public CommandLineRunner commandLineRunner() {
         return args -> {
-            carsRepository.deleteAll();
-            CarsDatabaseInsert.main();
+            applicationService.deleteAll();
+            applicationService.insertData();
         };
     }
 
