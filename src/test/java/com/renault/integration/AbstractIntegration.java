@@ -1,7 +1,7 @@
 package com.renault.integration;
 
-import com.renault.CitiesApplication;
-import com.renault.services.ApplicationService;
+import com.renault.CarsApplication;
+import com.renault.service.ApplicationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,8 +19,9 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.HashSet;
 import java.util.List;
-import java.util.OptionalInt;
+import java.util.Set;
 
 import static java.lang.String.format;
 import static java.net.http.HttpClient.newHttpClient;
@@ -30,8 +31,8 @@ import static java.net.http.HttpResponse.BodyHandlers.ofString;
 import static java.util.stream.Collectors.toList;
 import static org.springframework.http.HttpStatus.valueOf;
 
-@SpringBootTest(classes = CitiesApplication.class)
-public abstract class TestCitiesApplication {
+@SpringBootTest(classes = CarsApplication.class)
+public abstract class AbstractIntegration {
 
     @Autowired
     private ApplicationService applicationService;
@@ -133,59 +134,26 @@ public abstract class TestCitiesApplication {
         }
     }
 
-    List<String> getCountryNames() {
-        return getNames("SELECT name FROM country");
+    Set<String> getBrands() {
+        return new HashSet<>(getSelectColumnsAsStrings("SELECT brand FROM cars"));
     }
 
-    OptionalInt getCountryIdForName(String name) {
-        return getIdForName(name, "SELECT id FROM country WHERE name = :name");
+    List<String> getCarModelsForBrand(String brand) {
+        return getSelectColumnsAsStrings(format("SELECT model FROM cars WHERE brand = '%s'", brand));
     }
 
-    List<String> getRegionNames() {
-        return getNames("SELECT name FROM region");
+    List<Integer> getCarIdsForBrand(String brand) {
+        return getSelectColumnsAsInts(format("SELECT id FROM cars WHERE brand = '%s'", brand));
     }
 
-    OptionalInt getRegionIdForName(String name) {
-        return getIdForName(name, "SELECT id FROM region WHERE name = :name");
-    }
-
-    List<String> getCityNames() {
-        return getNames("SELECT name FROM city");
-    }
-
-    OptionalInt getCityIdForName(String name) {
-        return getIdForName(name, "SELECT id FROM city WHERE name = :name");
-    }
-
-    List<String> getUserNames() {
-        return getNames("SELECT name FROM user");
-    }
-
-    OptionalInt getUserIdForName(String name) {
-        return getIdForName(name, "SELECT id FROM user WHERE name = :name");
-    }
-
-    List<String> getCityNamesForUser(int userId) {
-        String sqlString = "SELECT city.name AS city_name " +
-                "FROM user, city, user_city " +
-                "WHERE user.id = " + userId + " " +
-                "AND user.id = user_city.user_id " +
-                "AND city.id = user_city.city_id";
-        @SuppressWarnings("unchecked")
-        List<Object> resultList = entityManager.createNativeQuery(sqlString).getResultList();
-        return resultList.stream()
-                .map(object -> (String) object)
-                .collect(toList());
-    }
-
-    private OptionalInt getIdForName(String name, String sql) {
-        Query nativeQuery = entityManager.createNativeQuery(sql).setParameter("name", name);
+    private List<Integer> getSelectColumnsAsInts(String sql) {
+        Query nativeQuery = entityManager.createNativeQuery(sql);
         @SuppressWarnings("unchecked")
         List<Object> resultList = nativeQuery.getResultList();
-        return resultList.stream().mapToInt(object -> (int) object).findFirst();
+        return resultList.stream().map(object -> (Integer) object).collect(toList());
     }
 
-    private List<String> getNames(String sql) {
+    private List<String> getSelectColumnsAsStrings(String sql) {
         Query nativeQuery = entityManager.createNativeQuery(sql);
         @SuppressWarnings("unchecked")
         List<Object> resultList = nativeQuery.getResultList();
