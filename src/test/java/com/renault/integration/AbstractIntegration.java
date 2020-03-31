@@ -1,7 +1,7 @@
 package com.renault.integration;
 
 import com.renault.CarsApplication;
-import com.renault.service.ApplicationService;
+import com.renault.services.ApplicationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

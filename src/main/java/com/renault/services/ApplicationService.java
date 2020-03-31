@@ -1,4 +1,4 @@
-package com.renault.service;
+package com.renault.services;
 
 public interface ApplicationService {
 

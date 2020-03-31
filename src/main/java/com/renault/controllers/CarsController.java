@@ -1,7 +1,8 @@
-package com.renault.servlets;
+package com.renault.controllers;
 
-import com.renault.model.Car;
-import com.renault.service.CarsRepository;
+import com.renault.dtos.CarDto;
+import com.renault.models.Car;
+import com.renault.services.CarsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,32 +18,36 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Set;
 
+import static java.util.stream.Collectors.toList;
+
 @CrossOrigin
 @RestController
 @RequestMapping
 public class CarsController extends HttpServlet {
 
     @Autowired
-    private CarsRepository carsRepository;
+    private CarsService carsService;
 
     @GetMapping("/cars/brands")
-    public Set<String> findBrands() {
-        return carsRepository.findBrands();
+    public Set<String> getBrands() {
+        return carsService.getBrands();
     }
 
     @GetMapping("/cars/brands/{brand}")
-    public List<Car> findCarsByBrand(@PathVariable("brand") String brand) {
-        return carsRepository.findCarsByBrand(brand);
+    public List<CarDto> getCarsByBrand(@PathVariable("brand") String brand) {
+        return carsService.getCarsByBrand(brand).stream()
+                .map(car -> new CarDto(car.getBrand(), car.getModel()))
+                .collect(toList());
     }
 
     @PostMapping("/cars")
-    public void insertCar(@RequestBody @Valid Car car) {
-        carsRepository.save(car);
+    public void createCar(@RequestBody @Valid CarDto car) {
+        carsService.insertCar(new Car(car.getBrand(), car.getModel()));
     }
 
     @DeleteMapping("/cars/{id}")
     public void deleteCar(@PathVariable("id") int id) {
-        carsRepository.deleteById(id);
+        carsService.deleteCar(id);
     }
 
 }

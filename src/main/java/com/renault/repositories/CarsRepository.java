@@ -1,6 +1,6 @@
-package com.renault.service;
+package com.renault.repositories;
 
-import com.renault.model.Car;
+import com.renault.models.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,6 @@
 package com.renault;
 
-import com.renault.service.ApplicationService;
+import com.renault.services.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
