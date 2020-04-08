@@ -1,4 +1,10 @@
-<div *ngFor="let car of cars">
-  <span>{{ car.brand }} {{ car.model }}</span>
-  <button (click)="delete(car)">delete</button>
+<div>
+  <app-brand-list></app-brand-list>
+</div>
+<div>
+  <h3>Model list</h3>
+  <div *ngFor="let car of cars">
+    <span>{{ car.brand }} {{ car.model }}</span>
+    <button (click)="delete(car)">delete</button>
+  </div>
 </div>

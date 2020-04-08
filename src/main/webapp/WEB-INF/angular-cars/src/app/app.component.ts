@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {CarsService} from "./cars.service";
 
 @Component({
   selector: 'app-root',
@@ -8,10 +7,14 @@ import {CarsService} from "./cars.service";
 })
 export class AppComponent implements OnInit {
 
-  constructor(private carsService: CarsService) {
+  constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  loggedIn(): boolean {
+    return sessionStorage.getItem('token').length !== 0;
   }
 
 }

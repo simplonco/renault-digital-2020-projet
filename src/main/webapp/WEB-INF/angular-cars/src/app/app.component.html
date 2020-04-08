@@ -1,12 +1,12 @@
 <div>
   <h1><a routerLink="/">Cars</a></h1>
-  <app-brand-list></app-brand-list>
+  <nav>
+    <div *ngIf="loggedIn()"><a routerLink="/logout">logout</a></div>
+    <div *ngIf="!loggedIn()"><a routerLink="/login">login</a></div>
+    <div><a routerLink="/create">create car</a></div>
+    <div><a routerLink="/list">list cars</a></div>
+  </nav>
   <div>
-    <h2>Create</h2>
-    <app-car-form></app-car-form>
-  </div>
-  <div>
-    <h2>List</h2>
     <router-outlet></router-outlet>
   </div>
 </div>

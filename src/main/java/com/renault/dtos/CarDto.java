@@ -12,7 +12,8 @@ public class CarDto {
         // java bean
     }
 
-    public CarDto(String brand, String model) {
+    public CarDto(int id, String brand, String model) {
+        this.id = id;
         this.brand = brand;
         this.model = model;
     }

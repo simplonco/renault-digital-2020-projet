@@ -1,0 +1,20 @@
+<h2>Login</h2>
+<form name="form" (ngSubmit)="loginForm.form.valid && login()" #loginForm="ngForm" novalidate>
+  <div>
+    <label for="username">username: </label>
+    <input type="text"
+           id="username"
+           name="username" [(ngModel)]="model.username"
+           #username="ngModel" required/>
+  </div>
+  <div>
+    <label for="password">password: </label>
+    <input type="password"
+           id="password"
+           name="password" [(ngModel)]="model.password"
+           #password="ngModel" required/>
+  </div>
+  <div>
+    <button>Login</button>
+  </div>
+</form>

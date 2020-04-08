@@ -68,10 +68,6 @@ public abstract class AbstractIntegration {
         }
     }
 
-    void post(String path) {
-        post(path, null);
-    }
-
     void post(String path, JsonObject body) {
         String query = format("http://localhost:%s/%s", port, path);
         HttpClient client = newHttpClient();
@@ -79,6 +75,7 @@ public abstract class AbstractIntegration {
                 .uri(URI.create(query))
                 .POST(ofString(body == null ? "" : body.toString()))
                 .header("Content-Type", "application/json; charset=utf8")
+                .header("Authorization", "Basic dXNlcjpwYXNzd29yZA==")
                 .build();
         try {
             HttpResponse<String> response = client.send(request, ofString());
@@ -97,29 +94,10 @@ public abstract class AbstractIntegration {
     void delete(String path) {
         String query = format("http://localhost:%s/%s", port, path);
         HttpClient client = newHttpClient();
-        HttpRequest request = newBuilder().uri(URI.create(query)).DELETE().build();
-        try {
-            HttpResponse<String> response = client.send(request, ofString());
-            if (response.statusCode() != 200) {
-                throw new ResponseStatusException(valueOf(response.statusCode()),
-                        format("Wrong status code: %d", response.statusCode()));
-            }
-            String json = response.body();
-            json = json.isBlank() ? "(blank)" : json;
-            System.out.println(format("Response from '%s' -> %s", query, json));
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    void put(String path, JsonObject body) {
-        String query = format("http://localhost:%s/%s", port, path);
-        HttpClient client = newHttpClient();
         HttpRequest request = newBuilder()
                 .uri(URI.create(query))
-                .PUT(ofString(body.toString()))
-                .header("Content-Type", "application/json; charset=utf8")
-                .build();
+                .header("Authorization", "Basic dXNlcjpwYXNzd29yZA==")
+                .DELETE().build();
         try {
             HttpResponse<String> response = client.send(request, ofString());
             if (response.statusCode() != 200) {

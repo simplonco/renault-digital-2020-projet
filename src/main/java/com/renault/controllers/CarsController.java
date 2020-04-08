@@ -36,15 +36,17 @@ public class CarsController extends HttpServlet {
     @GetMapping("/cars/brands/{brand}")
     public List<CarDto> getCarsByBrand(@PathVariable("brand") String brand) {
         return carsService.getCarsByBrand(brand).stream()
-                .map(car -> new CarDto(car.getBrand(), car.getModel()))
+                .map(car -> new CarDto(car.getId(), car.getBrand(), car.getModel()))
                 .collect(toList());
     }
 
+    // authenticated
     @PostMapping("/cars")
     public void createCar(@RequestBody @Valid CarDto car) {
         carsService.insertCar(new Car(car.getBrand(), car.getModel()));
     }
 
+    // authenticated
     @DeleteMapping("/cars/{id}")
     public void deleteCar(@PathVariable("id") int id) {
         carsService.deleteCar(id);

@@ -1,0 +1,7 @@
+#username.ng-invalid, #password.ng-invalid {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+#username.ng-valid, #password.ng-valid {
+  background-color: rgba(0, 255, 0, 0.2);
+}

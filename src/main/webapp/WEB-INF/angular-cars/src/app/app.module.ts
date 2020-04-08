@@ -7,13 +7,17 @@ import {CarModelListComponent} from './car-model-list/car-model-list.component';
 import {BrandListComponent} from './brand-list/brand-list.component';
 import {CarFormComponent} from './car-form/car-form.component';
 import {FormsModule} from "@angular/forms";
+import {LoginComponent} from './login/login.component';
+import {LogoutComponent} from './logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarModelListComponent,
     BrandListComponent,
-    CarFormComponent
+    CarFormComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

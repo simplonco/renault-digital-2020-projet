@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CarsService} from "../cars.service";
-import {Car} from "../car";
+import {CarsService} from "../services/cars.service";
+import {Car} from "../models/car";
 
 @Component({
   selector: 'app-car-model-list',
@@ -19,17 +19,21 @@ export class CarModelListComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.carsService.findCarsByBrand(params["brand"])
-        .then(response => response.json())
-        .then(response => this.cars = response)
+        .subscribe(response => this.cars = response);
     });
   }
 
   delete(car: Car) {
     this.carsService.delete(car)
-      .then(response => {
-        this.carsService.carObverver.next(car);
-        this.ngOnInit();
-      })
+      .subscribe(
+        response => {
+          this.carsService.carObverver.next(car);
+          this.ngOnInit();
+        },
+        error => {
+          alert("Please login");
+        }
+      );
   }
 
 }

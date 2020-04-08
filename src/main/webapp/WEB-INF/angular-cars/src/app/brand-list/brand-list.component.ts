@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CarsService} from "../cars.service";
+import {CarsService} from "../services/cars.service";
 
 @Component({
   selector: 'app-brand-list',
@@ -18,8 +18,7 @@ export class BrandListComponent implements OnInit {
 
   ngOnInit(): void {
     this.carsService.findBrands()
-      .then(response => response.json())
-      .then(response => this.brands = response)
+      .subscribe(response => this.brands = response)
   }
 
 }
