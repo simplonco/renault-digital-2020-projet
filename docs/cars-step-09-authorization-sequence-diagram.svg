@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="692.5px" preserveAspectRatio="none" style="width:618px;height:692px;" version="1.1" viewBox="0 0 618 692" width="618.75px" zoomAndPan="magnify"><defs><filter height="300%" id="f5vycaymzh5tp" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.5"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="5.0" dy="5.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="22.5" lengthAdjust="spacingAndGlyphs" textLength="293.75" x="164.375" y="35.8569">Cars - Step 09 - Authorization</text><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="92.1289" style="stroke: #2F4F4F; stroke-width: 1.25;" width="12.5" x="475" y="135.752"/><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="92.1289" style="stroke: #2F4F4F; stroke-width: 1.25;" width="12.5" x="475" y="265.8203"/><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="92.1289" style="stroke: #2F4F4F; stroke-width: 1.25;" width="12.5" x="475" y="395.8887"/><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="92.1289" style="stroke: #2F4F4F; stroke-width: 1.25;" width="12.5" x="475" y="525.957"/><line style="stroke: #2F4F4F; stroke-width: 1.25; stroke-dasharray: 5.0,5.0;" x1="43.75" x2="43.75" y1="95.3125" y2="640.5859"/><line style="stroke: #2F4F4F; stroke-width: 1.25; stroke-dasharray: 5.0,5.0;" x1="481.25" x2="481.25" y1="95.3125" y2="640.5859"/><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="39.5117" style="stroke: #2F4F4F; stroke-width: 1.875;" width="62.5" x="10" y="49.5508"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="45" x="18.75" y="76.4673">Client</text><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="39.5117" style="stroke: #2F4F4F; stroke-width: 1.875;" width="62.5" x="10" y="639.3359"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="45" x="18.75" y="666.2524">Client</text><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="39.5117" style="stroke: #2F4F4F; stroke-width: 1.875;" width="70" x="443.75" y="49.5508"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="52.5" x="452.5" y="76.4673">Server</text><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="39.5117" style="stroke: #2F4F4F; stroke-width: 1.875;" width="70" x="443.75" y="639.3359"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="52.5" x="452.5" y="666.2524">Server</text><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="92.1289" style="stroke: #2F4F4F; stroke-width: 1.25;" width="12.5" x="475" y="135.752"/><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="92.1289" style="stroke: #2F4F4F; stroke-width: 1.25;" width="12.5" x="475" y="265.8203"/><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="92.1289" style="stroke: #2F4F4F; stroke-width: 1.25;" width="12.5" x="475" y="395.8887"/><rect fill="#FFFFFF" filter="url(#f5vycaymzh5tp)" height="92.1289" style="stroke: #2F4F4F; stroke-width: 1.25;" width="12.5" x="475" y="525.957"/><polygon fill="#2F4F4F" points="460,130.752,472.5,135.752,460,140.752,465,135.752" style="stroke: #2F4F4F; stroke-width: 1.25;"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="43.75" x2="467.5" y1="135.752" y2="135.752"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="86.25" x="52.5" y="129.6814">GET "/cars"</text><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="487.5" x2="540" y1="173.6914" y2="173.6914"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="540" x2="540" y1="173.6914" y2="189.9414"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="488.75" x2="540" y1="189.9414" y2="189.9414"/><polygon fill="#2F4F4F" points="501.25,184.9414,488.75,189.9414,501.25,194.9414,496.25,189.9414" style="stroke: #2F4F4F; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="73.75" x="496.25" y="167.6208">permitAll()</text><polygon fill="#2F4F4F" points="57.5,222.8809,45,227.8809,57.5,232.8809,52.5,227.8809" style="stroke: #2F4F4F; stroke-width: 1.25;"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="50" x2="480" y1="227.8809" y2="227.8809"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="26.25" x="65" y="221.8103">200</text><polygon fill="#2F4F4F" points="460,260.8203,472.5,265.8203,460,270.8203,465,265.8203" style="stroke: #2F4F4F; stroke-width: 1.25;"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="43.75" x2="467.5" y1="265.8203" y2="265.8203"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="97.5" x="52.5" y="259.7498">POST "/cars"</text><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="487.5" x2="540" y1="303.7598" y2="303.7598"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="540" x2="540" y1="303.7598" y2="320.0098"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="488.75" x2="540" y1="320.0098" y2="320.0098"/><polygon fill="#2F4F4F" points="501.25,315.0098,488.75,320.0098,501.25,325.0098,496.25,320.0098" style="stroke: #2F4F4F; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="107.5" x="496.25" y="297.6892">authenticated()</text><polygon fill="#2F4F4F" points="57.5,352.9492,45,357.9492,57.5,362.9492,52.5,357.9492" style="stroke: #2F4F4F; stroke-width: 1.25;"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="50" x2="480" y1="357.9492" y2="357.9492"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="26.25" x="65" y="351.8787">401</text><polygon fill="#2F4F4F" points="460,390.8887,472.5,395.8887,460,400.8887,465,395.8887" style="stroke: #2F4F4F; stroke-width: 1.25;"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="43.75" x2="467.5" y1="395.8887" y2="395.8887"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="388.75" x="52.5" y="389.8181">POST "/cars", Headers: { "Authorization": "Basic ..." }</text><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="487.5" x2="540" y1="433.8281" y2="433.8281"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="540" x2="540" y1="433.8281" y2="450.0781"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="488.75" x2="540" y1="450.0781" y2="450.0781"/><polygon fill="#2F4F4F" points="501.25,445.0781,488.75,450.0781,501.25,455.0781,496.25,450.0781" style="stroke: #2F4F4F; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="107.5" x="496.25" y="427.7576">authenticated()</text><polygon fill="#2F4F4F" points="57.5,483.0176,45,488.0176,57.5,493.0176,52.5,488.0176" style="stroke: #2F4F4F; stroke-width: 1.25;"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="50" x2="480" y1="488.0176" y2="488.0176"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="26.25" x="65" y="481.947">200</text><polygon fill="#2F4F4F" points="460,520.957,472.5,525.957,460,530.957,465,525.957" style="stroke: #2F4F4F; stroke-width: 1.25;"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="43.75" x2="467.5" y1="525.957" y2="525.957"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="407.5" x="52.5" y="519.8865">DELETE "/cars", Headers: { "Authorization": "Basic ..." }</text><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="487.5" x2="540" y1="563.8965" y2="563.8965"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="540" x2="540" y1="563.8965" y2="580.1465"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="488.75" x2="540" y1="580.1465" y2="580.1465"/><polygon fill="#2F4F4F" points="501.25,575.1465,488.75,580.1465,501.25,585.1465,496.25,580.1465" style="stroke: #2F4F4F; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="107.5" x="496.25" y="557.8259">authenticated()</text><polygon fill="#2F4F4F" points="57.5,613.0859,45,618.0859,57.5,623.0859,52.5,618.0859" style="stroke: #2F4F4F; stroke-width: 1.25;"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="50" x2="480" y1="618.0859" y2="618.0859"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="26.25" x="65" y="612.0154">200</text><!--MD5=[8632aa5581675e9b3fe5760cbf025238]
+@startuml
+
+title
+Cars - Step 09 - Authorization
+end title
+
+skinparam sequence {
+	BackgroundColor White
+	ArrowColor DarkSlateGray
+	BorderColor DarkSlateGray
+	LifeLineBorderColor DarkSlateGray
+	ParticipantBorderColor DarkSlateGray
+	ParticipantBackgroundColor  White
+}
+
+Client -> Server: GET "/cars"
+activate Server
+Server -> Server: permitAll()
+Server -> Client: 200
+deactivate Server
+
+Client -> Server: POST "/cars"
+activate Server
+Server -> Server: authenticated()
+Server -> Client: 401
+deactivate Server
+
+Client -> Server: POST "/cars", Headers: { "Authorization": "Basic ..." }
+activate Server
+Server -> Server: authenticated()
+Server -> Client: 200
+deactivate Server
+
+Client -> Server: DELETE "/cars", Headers: { "Authorization": "Basic ..." }
+activate Server
+Server -> Server: authenticated()
+Server -> Client: 200
+deactivate Server
+
+@enduml
+
+PlantUML version 1.2020.03beta6(Unknown compile time)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.25
+Operating System: Windows 10
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

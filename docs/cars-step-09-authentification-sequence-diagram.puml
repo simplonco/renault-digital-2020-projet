@@ -1,0 +1,22 @@
+@startuml
+
+title
+Cars - Step 09 - Authentification
+end title
+
+skinparam sequence {
+	BackgroundColor White
+	ArrowColor DarkSlateGray
+	BorderColor DarkSlateGray
+	LifeLineBorderColor DarkSlateGray
+	ParticipantBorderColor DarkSlateGray
+	ParticipantBackgroundColor  White
+}
+
+Client -> Server: POST "/login", Body: {"username": "...", "password", "..."}
+activate Server
+Server -> Server: LoginService#verifyUser
+Server -> Client: 200 / 401, true / false
+deactivate Server
+
+@enduml

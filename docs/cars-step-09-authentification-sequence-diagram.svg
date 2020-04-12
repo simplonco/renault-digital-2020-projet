@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="301.25px" preserveAspectRatio="none" style="width:691px;height:301px;" version="1.1" viewBox="0 0 691 301" width="691.25px" zoomAndPan="magnify"><defs><filter height="300%" id="ffy5m658ejnue" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.5"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="5.0" dy="5.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="22.5" lengthAdjust="spacingAndGlyphs" textLength="317.5" x="188.75" y="35.8569">Cars - Step 09 - Authentification</text><rect fill="#FFFFFF" filter="url(#ffy5m658ejnue)" height="92.1289" style="stroke: #2F4F4F; stroke-width: 1.25;" width="12.5" x="485" y="135.752"/><line style="stroke: #2F4F4F; stroke-width: 1.25; stroke-dasharray: 5.0,5.0;" x1="43.75" x2="43.75" y1="95.3125" y2="250.3809"/><line style="stroke: #2F4F4F; stroke-width: 1.25; stroke-dasharray: 5.0,5.0;" x1="491.25" x2="491.25" y1="95.3125" y2="250.3809"/><rect fill="#FFFFFF" filter="url(#ffy5m658ejnue)" height="39.5117" style="stroke: #2F4F4F; stroke-width: 1.875;" width="62.5" x="10" y="49.5508"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="45" x="18.75" y="76.4673">Client</text><rect fill="#FFFFFF" filter="url(#ffy5m658ejnue)" height="39.5117" style="stroke: #2F4F4F; stroke-width: 1.875;" width="62.5" x="10" y="249.1309"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="45" x="18.75" y="276.0474">Client</text><rect fill="#FFFFFF" filter="url(#ffy5m658ejnue)" height="39.5117" style="stroke: #2F4F4F; stroke-width: 1.875;" width="70" x="453.75" y="49.5508"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="52.5" x="462.5" y="76.4673">Server</text><rect fill="#FFFFFF" filter="url(#ffy5m658ejnue)" height="39.5117" style="stroke: #2F4F4F; stroke-width: 1.875;" width="70" x="453.75" y="249.1309"/><text fill="#000000" font-family="sans-serif" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="52.5" x="462.5" y="276.0474">Server</text><rect fill="#FFFFFF" filter="url(#ffy5m658ejnue)" height="92.1289" style="stroke: #2F4F4F; stroke-width: 1.25;" width="12.5" x="485" y="135.752"/><polygon fill="#2F4F4F" points="470,130.752,482.5,135.752,470,140.752,475,135.752" style="stroke: #2F4F4F; stroke-width: 1.25;"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="43.75" x2="477.5" y1="135.752" y2="135.752"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="417.5" x="52.5" y="129.6814">POST "/login", Body: {"username": "...", "password", "..."}</text><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="497.5" x2="550" y1="173.6914" y2="173.6914"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="550" x2="550" y1="173.6914" y2="189.9414"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="498.75" x2="550" y1="189.9414" y2="189.9414"/><polygon fill="#2F4F4F" points="511.25,184.9414,498.75,189.9414,511.25,194.9414,506.25,189.9414" style="stroke: #2F4F4F; stroke-width: 1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="170" x="506.25" y="167.6208">LoginService#verifyUser</text><polygon fill="#2F4F4F" points="57.5,222.8809,45,227.8809,57.5,232.8809,52.5,227.8809" style="stroke: #2F4F4F; stroke-width: 1.25;"/><line style="stroke: #2F4F4F; stroke-width: 1.25;" x1="50" x2="490" y1="227.8809" y2="227.8809"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacingAndGlyphs" textLength="153.75" x="65" y="221.8103">200 / 401, true / false</text><!--MD5=[23c785b9431716405a378f1ee7d6e963]
+@startuml
+
+title
+Cars - Step 09 - Authentification
+end title
+
+skinparam sequence {
+	BackgroundColor White
+	ArrowColor DarkSlateGray
+	BorderColor DarkSlateGray
+	LifeLineBorderColor DarkSlateGray
+	ParticipantBorderColor DarkSlateGray
+	ParticipantBackgroundColor  White
+}
+
+Client -> Server: POST "/login", Body: {"username": "...", "password", "..."}
+activate Server
+Server -> Server: LoginService#verifyUser
+Server -> Client: 200 / 401, true / false
+deactivate Server
+
+@enduml
+
+PlantUML version 1.2020.03beta6(Unknown compile time)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.25
+Operating System: Windows 10
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

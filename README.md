@@ -27,7 +27,7 @@ Configurer la bdd dans [application.yml](./src/main/resources/application.yml) a
 gradlew bootRun
 ```
 
-## TODO
+## Content
 
 ### Step 1 (semaine 3)
 
@@ -124,25 +124,57 @@ Add DELETE and POST:
 - Add a create form to create a new car (frontend and backend)
 - Update components states when a new car (and brand) is created or deleted
 
-### Step 8 (semaine 12)
+### Step 8 (semaine 14)
 
-![Cars class diagram - Step 8](docs/cars_class_diagram_step_08.svg)
+Les opérations d'ajout d'un véhicule et de suppression de véhicule ne peuvent être effectués que par un utilisateur authentifié et autorisé.
 
-Make sure the application is split into the following packages:
+![Cars - Step 09 - Authentification - Form UI](docs/cars-step-09-authentification-ui.png)
 
-- `com.renault.controllers`
-- `com.renault.dtos`
-- `com.renault.entities`
-- `com.renault.repositories`
-- `com.renault.services`
+Nous allons implémenter cette fonctionnalité en 2 parties : (1) l'authentification avec l'ajout d'un formulaire de login et (2) l'autorisation avec l'ajout de règle de validation par URL et méthode.
 
-A car has a owner (a Owner has a name) and dealerships (a Dealership has an address):
+#### Step 8 - Ajout de l'authentification
 
-- Add the Owner entity
-    - Add the required properties (name)
-    - Add its relation to the Car entity
-    - Add a form in the UI to add an owner to a car
-- Add the Dealership entity
-    - Add the required properties (address)
-    - Add its relation to the Car entity
-    - Add a form in the UI to make a dealership sell a car
+L'authentification consiste à la vérification de l'identité (comprend aussi la création et la sécurisation), voir [https://en.wikipedia.org/wiki/Authentication](https://en.wikipedia.org/wiki/Authentication).
+
+![Cars - Step 09 - Authentification - Sequence Diagram](docs/cars-step-09-authentification-sequence-diagram.svg)
+
+Référence : [https://www.baeldung.com/spring-security-login-angular](https://www.baeldung.com/spring-security-login-angular)
+
+- SpringBoot Security (back) :
+    - Ajouter au "build.gradle": `compile "org.springframework.boot:spring-boot-starter-security:2.2.4.RELEASE"`
+    - Ajouter à "com.renault.config.BasicAuthConfiguration.configure(AuthenticationManagerBuilder)" un username, password, et roles
+    - Créer un "LoginController" sur l'URL "/login" qui reçoit un username et password et qui appelle le "LoginService" pour valider
+    - Le "LoginController" doit retourner true/false ou un code HTTP pour le front
+- Angular (front) :
+    - Dans le service "cars.service.ts", ajouter une méthode "login"
+    - La méthode login fait un POST sur "http://localhost:8080/login" avec les identifiants en body
+    - Créer un nouveau composant "login.component.ts"
+    - Le composant est un formulaire pour entrer "username" et "password"
+    - (vous pouvez vous baser sur le "car-form.component.html", ce sera presque identique)
+    - Dans "login.component.ts", appeler la méthode "login" du service
+    - Si le login est en succès, stocker le login en "session storage" : `sessionStorage.setItem('loggedIn', true)`
+    - Créer un nouveau composant "logout.component.ts"
+    - Ce composant remet à zéro le stockage et redirige vers la home
+    - Dans le composant racine, le bouton doit changer entre login / logout en fonction de l'état du login  
+
+#### Step 8 - Ajout de l'autorisation
+
+L'autorisation est la spécification et application des droits liés à une identité (précédemment authentifiée), voir [https://en.wikipedia.org/wiki/Authorization](https://en.wikipedia.org/wiki/Authorization).
+
+![Cars - Step 09 - Authorization - Sequence Diagram](docs/cars-step-09-authorization-sequence-diagram.svg)
+
+Référence : [https://www.baeldung.com/spring-security-login-angular](https://www.baeldung.com/spring-security-login-angular)
+
+- SpringBoot Security (back) :
+    - Ajouter à "com.renault.config.BasicAuthConfiguration.configure(HttpSecurity)" un `antMatchers` pour chaque méthode à autoriser
+    - Le `antMatchers` prend une méthode HTTP et une URL, sur lequel on doit appeler `authenticated`
+- Angular (front) :
+    - Vérifier que les URL authentifiées retournent maintenant des 401 
+    - Pour authentifier les opérations, il faut envoyer le Header "Authorization"
+    - (le format est "Authorization: Basic TOKEN", ou TOKEN est la concaténation de "username:password", encodé en Base64, avec [`btoa`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa))
+    - Dans "login.component.ts", si le login est en succès, concaténer "username:password", puis appeler `btoa` :
+        ```javascript
+        let base64hash = btoa(username + ':' + password);
+        sessionStorage.setItem('token', base64hash);
+        ```
+    - Le token doit être envoyé avec les requêtes authentifiées

@@ -1,0 +1,40 @@
+@startuml
+
+title
+Cars - Step 09 - Authorization
+end title
+
+skinparam sequence {
+	BackgroundColor White
+	ArrowColor DarkSlateGray
+	BorderColor DarkSlateGray
+	LifeLineBorderColor DarkSlateGray
+	ParticipantBorderColor DarkSlateGray
+	ParticipantBackgroundColor  White
+}
+
+Client -> Server: GET "/cars"
+activate Server
+Server -> Server: permitAll()
+Server -> Client: 200
+deactivate Server
+
+Client -> Server: POST "/cars"
+activate Server
+Server -> Server: authenticated()
+Server -> Client: 401
+deactivate Server
+
+Client -> Server: POST "/cars", Headers: { "Authorization": "Basic ..." }
+activate Server
+Server -> Server: authenticated()
+Server -> Client: 200
+deactivate Server
+
+Client -> Server: DELETE "/cars", Headers: { "Authorization": "Basic ..." }
+activate Server
+Server -> Server: authenticated()
+Server -> Client: 200
+deactivate Server
+
+@enduml
