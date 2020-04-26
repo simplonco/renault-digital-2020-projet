@@ -20,4 +20,9 @@ public class LoginController {
         userService.verifyUser(user.getUsername(), user.getPassword());
     }
 
+    @RequestMapping("/register")
+    public void register(@RequestBody UserDto user) {
+        userService.registerUser(user.getUsername(), user.getPassword());
+    }
+
 }

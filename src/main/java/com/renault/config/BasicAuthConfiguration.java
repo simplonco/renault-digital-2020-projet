@@ -34,7 +34,7 @@ public class BasicAuthConfiguration extends WebSecurityConfigurerAdapter {
                 // requests URL
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/cars").authenticated()
-                .antMatchers(HttpMethod.DELETE, "/cars/**").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/cars/**").hasAuthority("ADMIN")
                 // authentication type
                 .and().httpBasic();
     }

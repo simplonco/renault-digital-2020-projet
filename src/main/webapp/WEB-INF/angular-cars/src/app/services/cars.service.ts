@@ -48,6 +48,14 @@ export class CarsService {
       });
   }
 
+  public register(username: string, password: string): Observable<any> {
+    return this.http
+      .post(`http://localhost:${this.port}/register`, {
+        username: username,
+        password: password
+      });
+  }
+
   private getAuthenticatedHttpOptions(): any {
     const token = sessionStorage.getItem('token');
     if (token) {

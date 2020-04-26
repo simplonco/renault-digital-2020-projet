@@ -9,6 +9,7 @@ import {CarFormComponent} from './car-form/car-form.component';
 import {FormsModule} from "@angular/forms";
 import {LoginComponent} from './login/login.component';
 import {LogoutComponent} from './logout/logout.component';
+import {RegisterComponent} from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {LogoutComponent} from './logout/logout.component';
     BrandListComponent,
     CarFormComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
