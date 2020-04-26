@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   }
 
   loggedIn(): boolean {
-    return sessionStorage.getItem('token').length !== 0;
+    return sessionStorage.getItem('token') && sessionStorage.getItem('token').length !== 0;
   }
 
 }
