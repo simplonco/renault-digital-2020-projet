@@ -26,14 +26,10 @@ export class LoginComponent implements OnInit {
     this.carsService
       .login(this.model.username, this.model.password)
       .subscribe(
-        isValid => {
-          if (isValid) {
-            let base64hash = btoa(this.model.username + ':' + this.model.password);
-            sessionStorage.setItem('token', base64hash);
-            this.router.navigate(['']);
-          } else {
-            alert("Authentication failed");
-          }
+        () => {
+          let base64hash = btoa(this.model.username + ':' + this.model.password);
+          sessionStorage.setItem('token', base64hash);
+          this.router.navigate(['']);
         },
         error => {
           if (error.status === 401) {

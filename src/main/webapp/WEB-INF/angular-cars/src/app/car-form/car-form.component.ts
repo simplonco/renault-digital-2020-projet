@@ -22,13 +22,13 @@ export class CarFormComponent implements OnInit {
     this.carsService
       .insert(this.car)
       .subscribe(
-        value => {
+        () => {
           this.carsService.carObverver.next(this.car);
           this.message = `Car ${this.car.brand} ${this.car.model} added`;
           this.car = new Car();
         },
-        error => {
-          alert("Please login");
+        () => {
+          alert("Unauthorized");
         }
       );
   }

@@ -17,7 +17,7 @@ import {LogoutComponent} from './logout/logout.component';
     BrandListComponent,
     CarFormComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

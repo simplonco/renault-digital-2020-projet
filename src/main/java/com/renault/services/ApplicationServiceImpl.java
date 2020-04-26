@@ -29,6 +29,16 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     @Transactional
     public void insertData() {
+        insertUsers();
+        insertCars();
+    }
+
+    private void insertUsers() {
+        // TODO insert a USER role and a ADMIN role
+        // TODO insert a admin user with the "supermotdepasse1!" password
+    }
+
+    private void insertCars() {
         for (Car car : getCars()) {
             carsRepository.save(car);
         }

@@ -178,3 +178,49 @@ Référence : [https://www.baeldung.com/spring-security-login-angular](https://w
         sessionStorage.setItem('token', base64hash);
         ```
     - Le token doit être envoyé avec les requêtes authentifiées
+
+#### Step 9 - Ajout de l'enregistrement
+
+Afin d'enregistrer un nouvel utilisateur, nous devons stocker les utilisateurs et roles en base de données. Pour cela, nous avons besoin de 2 nouvelles entités, `User` et `Role`, que vous pouvez reprendre de votre exercice de la semaine passé (voir exercice de Frank : [https://github.com/Frank-readresolve/people](https://github.com/Frank-readresolve/people)). Nous avons aussi besoin de encoder (hasher) le mot de passe de l'utilisateur, et configurer Spring pour qu'il le fasse automatiquement. Finalement, nous allons ajouter l'enregistrement d'un nouvel utilisateur grâce à un formulaire.
+
+Références :
+
+- Utilisation de l'encodage de mod de passe : https://www.baeldung.com/spring-security-registration-password-encoding-bcrypt
+- Quelques explication sur le hashing BCrypt et autres : https://www.baeldung.com/java-password-hashing
+- Custom authentication provider : https://www.baeldung.com/spring-security-authentication-provider
+- Custom user details service : https://www.baeldung.com/spring-security-authentication-with-a-database
+ 
+Backend :
+
+- `User` et `Role`
+    - Implémenter les 2 entités (reprendre le code de la semaine passé)
+    - Un `User` a un username, un password, et peut avoir plusieurs `Role`
+    - Un `Role` a un nom
+- `ApplicationService`
+    - À l'init de l'application, ajouter 2 roles : "USER" et "ADMIN"
+    - Ajouter un user "admin" qui a le role "ADMIN"
+- `BasicAuthConfiguration`
+    - Configurer le authentication provider en lui ajoutant un `UserDetailsService`
+    - Configurer le authentication provider en lui ajoutant le `BCryptPasswordEncoder`
+    - Configurer l'autorisation pour que le suppression de voiture ne soit possible que pour un role "ADMIN"
+- `UserDetailsService`
+    - Créer un nouveau service pour le authentication provider qui étend `org.springframework.security.core.userdetails.UserDetailsService`
+    - Implémenter la méthode `loadUserByUsername` qui doit retourner charger un `User` et retourner un `UserDetails` (vous pouvez utiliser la sous-classe `org.springframework.security.core.userdetails.User`)
+    - Dans la méthode `loadUserByUsername` vous allez devoir instancier des GrantedAuthority pour chaque role (vous pouvez utiliser la sous-classe `org.springframework.security.core.authority.SimpleGrantedAuthority`)
+- `UserService`
+    - Dans la méthode `verifyUser`, vous devez utiliser le password encoder pour valider l'utilisateur
+    - (si le mot de passe n'est pas bon, vous pouvez renvoyer un `org.springframework.security.authentication.BadCredentialsException`)
+    - Créer une méthode `registerUser`, qui servira à créer un nouvel utilisateur
+    
+Frontend :
+
+- Créer un nouveau component "register" qui appelle le backend pour créer un nouveau user
+- (ce component ressemblera beaucoup au component "login")
+
+Bonus :
+
+- Récupérer l'utilisateur authentifié : https://www.baeldung.com/get-user-in-spring-security
+- Expressions de sécurités pour roles : https://www.baeldung.com/spring-security-expressions-basic
+- Pour la configuration de l'OAuth2 : https://www.baeldung.com/spring-security-5-oauth2-login
+- Spring security user / role schema (pas nécessaire de faire pareil) : https://docs.spring.io/spring-security/site/docs/current/reference/html5/#user-schema
+- Spring JDBC authentification : https://www.baeldung.com/spring-security-jdbc-authentication
