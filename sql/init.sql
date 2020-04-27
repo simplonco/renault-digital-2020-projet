@@ -12,7 +12,7 @@ DROP TABLE if exists user_roles cascade;
 
 CREATE TABLE cars
 (
-    id    SERIAL       NOT NULL,
+    id    integer      NOT NULL,
     brand VARCHAR(255) NOT NULL,
     model VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)

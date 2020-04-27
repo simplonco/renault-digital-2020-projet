@@ -179,7 +179,7 @@ Référence : [https://www.baeldung.com/spring-security-login-angular](https://w
         ```
     - Le token doit être envoyé avec les requêtes authentifiées
 
-#### Step 9 - Ajout de l'enregistrement
+### Step 9 - Enregistrement
 
 Afin d'enregistrer un nouvel utilisateur, nous devons stocker les utilisateurs et roles en base de données. Pour cela, nous avons besoin de 2 nouvelles entités, `User` et `Role`, que vous pouvez reprendre de votre exercice de la semaine passé (voir exercice de Frank : [https://github.com/Frank-readresolve/people](https://github.com/Frank-readresolve/people)). Nous avons aussi besoin de encoder (hasher) le mot de passe de l'utilisateur, et configurer Spring pour qu'il le fasse automatiquement. Finalement, nous allons ajouter l'enregistrement d'un nouvel utilisateur grâce à un formulaire.
 
@@ -224,3 +224,77 @@ Bonus :
 - Pour la configuration de l'OAuth2 : https://www.baeldung.com/spring-security-5-oauth2-login
 - Spring security user / role schema (pas nécessaire de faire pareil) : https://docs.spring.io/spring-security/site/docs/current/reference/html5/#user-schema
 - Spring JDBC authentification : https://www.baeldung.com/spring-security-jdbc-authentication
+
+### Step 10 - Analyse fonctionnelle
+
+Avant de commencer, nous allons créer une nouvelle application à partir de spring initializr et créer l'arborescence nécessaire au démarrage du projet (le corrigé se fera sur l'application "Cars", mais vous pouvez le faire pour votre projet).
+
+- Créer un nouveau dépôt sur github
+- Création du serveur
+    - Aller sur [spring initializr](https://start.spring.io/)
+    - Choisir Groovy / Maven
+    - Choisir Java 11 (voir [https://en.wikipedia.org/wiki/Java_version_history](https://en.wikipedia.org/wiki/Java_version_history))
+    - Choisir Spring Boot 2.2.6
+    - Remplir project metadata ("cars")
+    - Ajouter les dépendances
+        - Spring Boot DevTools
+        - Spring Web
+        - Spring Security
+        - Spring JDBC API
+        - Spring Data JPA
+        - MySQL Driver / PostgreSQL Driver
+    - Télécharger le zip et unzip à la racine de votre projet
+    - Renommer le dossier "cars" en "server"
+- Création du client
+    - Exécuter `ng new cars` à la racine de votre projet
+    - Renommer le dossier "cars" en "client"
+
+Nous allons procéder à l'analyse fonctionnelle pour l'application "Cars" (vous pouvez utiliser votre projet comme exemple). [Introduction sur les diagrammes UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams) à lire. 
+
+- [UML - Use case diagram](https://en.wikipedia.org/wiki/Use_case_diagram)
+    - Commencer sur papier à réfléchir aux différents cas d'usage
+    - Version électronique
+        - [https://app.diagrams.net](https://app.diagrams.net) (utiliser le format "blank")
+        - [PlantUML - Use Case Diagram](https://plantuml.com/use-case-diagram)
+    - Pour l'application "Cars", modéliser les différentes actions possibles :
+        - Un visiteur peut voir la liste de voitures
+        - Un administrateur peut supprimer une voiture
+        - etc.
+    - Déterminer les roles à partir du diagramme
+- Maquettage
+    - Commencer sur papier à réfléchir aux différents écran
+    - Penser en terme de "boites" (tag html, composant angular)
+    - Version électronique [https://pencil.evolus.vn/](https://pencil.evolus.vn/)
+
+### Step 11 - Analyse technique
+
+L'analyse technique défini les concepts techniques avant de les implémenter.
+
+- [UML - Class diagram](https://en.wikipedia.org/wiki/Class_diagram)
+    - Définir les concepts de votre application sur papier
+    - Version électronique
+        - [https://app.diagrams.net](https://app.diagrams.net) (utiliser le format "Class Diagram")
+        - [PlantUML - Class Diagram](https://plantuml.com/class-diagram)
+- [UML - Entity–relationship model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model)
+    - Représente les concepts de votre application du point de vu de la base de données
+    - (tip : à partir du SQL généré par Spring, vous pouvez utiliser [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) (utiliser "Files > Import" pour importer un script SQL)
+    - Version électronique
+        - [https://app.diagrams.net](https://app.diagrams.net) (utiliser le format "Entity Relationship Diagram")
+        - [PlantUML - Entity Relationship Diagram](https://plantuml.com/ie-diagram)
+
+Bonus :
+
+- [UML - Component diagram](https://en.wikipedia.org/wiki/Component_diagram)
+    - Exemple plus simple : [https://www.uml-diagrams.org/package-diagrams-examples.html](https://www.uml-diagrams.org/package-diagrams-examples.html)
+    - Aussi architecture multi-tiers : [https://www.uml-diagrams.org/multi-layered-web-architecture-uml-package-diagram-example.html](https://www.uml-diagrams.org/multi-layered-web-architecture-uml-package-diagram-example.html)
+    - Définir les composants de votre application sur papier : un client, un serveur, une bdd, des API externes ?
+    - Version électronique
+        - [https://app.diagrams.net](https://app.diagrams.net) (utiliser le format "blank")
+        - [PlantUML - Component diagram](https://plantuml.com/component-diagram)
+- Documentation technique :
+    - serveur : Exécuter `./gradlew javadoc` pour générer la document des classes Java
+    - client : Utiliser [compodoc](https://compodoc.github.io/compodoc/)
+
+Alternatives :
+
+- [StarUML 3](http://staruml.io/)
