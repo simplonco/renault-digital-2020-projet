@@ -291,10 +291,14 @@ Bonus :
     - Version électronique
         - [https://app.diagrams.net](https://app.diagrams.net) (utiliser le format "blank")
         - [PlantUML - Component diagram](https://plantuml.com/component-diagram)
+- [UML - Sequence diagram](https://en.wikipedia.org/wiki/Sequence_diagram)
+    - Voir [cars-step-09-authentification-sequence-diagram](docs/cars-step-09-authentification-sequence-diagram.puml)
+    - Voir [cars-step-09-authorization-sequence-diagram](docs/cars-step-09-authorization-sequence-diagram.puml)
 - Documentation technique :
-    - serveur : Exécuter `./gradlew javadoc` pour générer la document des classes Java
-    - client : Utiliser [compodoc](https://compodoc.github.io/compodoc/)
+    - serveur : Exécuter `./gradlew javadoc` pour générer la documentation des classes Java
+    - client : Utiliser [compodoc](https://compodoc.github.io/compodoc/) ou autre
 
 Alternatives :
 
 - [StarUML 3](http://staruml.io/)
+- [Google Drawing](drive.googe.com)
