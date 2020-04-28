@@ -46,3 +46,13 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task javadocPrivate(type: Javadoc) {
+  source = sourceSets.main.allJava
+  classpath = configurations.compileClasspath
+  options {
+    // Shows private properties too
+    showAll()
+    setEncoding "UTF8"
+  }
+}

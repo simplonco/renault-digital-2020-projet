@@ -40,13 +40,21 @@ public class CarsController extends HttpServlet {
                 .collect(toList());
     }
 
-    // authenticated
+    /**
+     * Crée une nouvelle voiture en base de donnée à partir de la voiture donnée. Cette méthode est authentifée pour le {@link com.renault.models.Role} : "USER".
+     *
+     * @param car le contenu de la voiture à créer
+     */
     @PostMapping("/cars")
     public void createCar(@RequestBody @Valid CarDto car) {
         carsService.insertCar(new Car(car.getBrand(), car.getModel()));
     }
 
-    // authenticated
+    /**
+     * Supprime une voiture en base de donnée à partir de l'id donné. Cette méthode est authentifée pour le {@link com.renault.models.Role} : "ADMIN".
+     *
+     * @param id l'id de la voiture à supprimer
+     */
     @DeleteMapping("/cars/{id}")
     public void deleteCar(@PathVariable("id") int id) {
         carsService.deleteCar(id);

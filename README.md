@@ -251,6 +251,9 @@ Avant de commencer, nous allons créer une nouvelle application à partir de spr
 
 Nous allons procéder à l'analyse fonctionnelle pour l'application "Cars" (vous pouvez utiliser votre projet comme exemple). [Introduction sur les diagrammes UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams) à lire. 
 
+- Brainstorm / benchmark
+    - Trouver des applications similaires : [AlternativeTo](https://alternativeto.net/)
+    - Tester d'autres sites : trouver là ou vous pouvez faire mieux, trouver des uses cases pour vous
 - [UML - Use case diagram](https://en.wikipedia.org/wiki/Use_case_diagram)
     - Commencer sur papier à réfléchir aux différents cas d'usage
     - Version électronique
@@ -282,6 +285,17 @@ L'analyse technique défini les concepts techniques avant de les implémenter.
         - [https://app.diagrams.net](https://app.diagrams.net) (utiliser le format "Entity Relationship Diagram")
         - [PlantUML - Entity Relationship Diagram](https://plantuml.com/ie-diagram)
 
+La documentation technique est une partie importante du développement logiciel, elle accompagne le logiciel pour expliquer le "quoi" alors que le code défini le "comment" :
+
+- La documentation technique est écrite dans le code, vous pouvez l'extraire pour le mettre dans votre rapport
+    - Java (Javadoc) : https://www.oracle.com/java/technologies/javase/javadoc-tool.html
+        - Exécuter `./gradlew javadoc` pour générer la documentation des classes Java
+        - Ouvrir le fichier "build/docs/javadoc/index.html"
+    - JavaScript (JSDoc) : https://jsdoc.app/about-getting-started.html
+        - Voir https://www.npmjs.com/package/jsdoc
+        - Voir https://onury.io/docma/
+- Example d'excellente documentation technique : https://microsoft.github.io/language-server-protocol/specifications/specification-3-14/
+
 Bonus :
 
 - [UML - Component diagram](https://en.wikipedia.org/wiki/Component_diagram)
@@ -294,11 +308,8 @@ Bonus :
 - [UML - Sequence diagram](https://en.wikipedia.org/wiki/Sequence_diagram)
     - Voir [cars-step-09-authentification-sequence-diagram](docs/cars-step-09-authentification-sequence-diagram.puml)
     - Voir [cars-step-09-authorization-sequence-diagram](docs/cars-step-09-authorization-sequence-diagram.puml)
-- Documentation technique :
-    - serveur : Exécuter `./gradlew javadoc` pour générer la documentation des classes Java
-    - client : Utiliser [compodoc](https://compodoc.github.io/compodoc/) ou autre
 
-Alternatives :
+Alternatives pour les diagrammes UML ou pour le maquettage :
 
 - [StarUML 3](http://staruml.io/)
 - [Google Drawing](drive.googe.com)
