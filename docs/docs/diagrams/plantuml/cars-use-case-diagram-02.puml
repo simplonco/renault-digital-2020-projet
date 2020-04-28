@@ -1,0 +1,34 @@
+@startuml
+
+title
+Cars - Use case diagram
+end title
+
+skinparam usecase {
+	BackgroundColor STRATEGY
+	ArrowColor DarkSlateGray
+	BorderColor DarkSlateGray
+	ActorBorderColor Black
+}
+
+actor :Visiteur:
+actor :Enregistré:
+actor :Administrateur:
+
+:Visiteur: --> (Afficher la liste des voitures)
+:Visiteur: --> (S'enregistrer)
+:Visiteur: --> (S'authentifier)
+
+:Enregistré: --> (Afficher la liste des voitures)
+:Enregistré: --> (Créer une nouvelle voiture)
+:Enregistré: --> (Logout)
+
+:Administrateur: --> (Afficher la liste des voitures)
+:Administrateur: --> (Créer une nouvelle voiture)
+:Administrateur: --> (Supprimer une voiture existante)
+
+(Supprimer une voiture existante) --> (Afficher la liste des voitures) : <<includes>>
+
+(S'enregistrer) <-- (S'enregistrer comme proffesseur) : <<extends>>
+
+@enduml
