@@ -1,14 +1,16 @@
 @startuml
 
 title
-Cars - Step 08 - Owner
+Cars - Class diagram
 end title
 
 skinparam class {
-	BackgroundColor White
+	BackgroundColor STRATEGY
 	ArrowColor DarkSlateGray
 	BorderColor DarkSlateGray
 }
+
+skinparam linetype ortho
 
 class Car {
     + id : int
@@ -27,7 +29,7 @@ class Dealership {
     + address : String
 }
 
-Car *- "1" Owner
-Car "*" *-* "*" Dealership : sells
+Car "0..*"  ---*  "0..1" Owner      : "< owns"
+Car "0..*"  ---*  "0..*" Dealership : "< sells"
 
 @enduml

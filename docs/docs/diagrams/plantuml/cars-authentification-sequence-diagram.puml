@@ -5,12 +5,12 @@ Cars - Step 09 - Authentification
 end title
 
 skinparam sequence {
-	BackgroundColor White
+	BackgroundColor STRATEGY
+	ParticipantBackgroundColor STRATEGY
 	ArrowColor DarkSlateGray
 	BorderColor DarkSlateGray
 	LifeLineBorderColor DarkSlateGray
 	ParticipantBorderColor DarkSlateGray
-	ParticipantBackgroundColor  White
 }
 
 Client -> Server: POST "/login", Body: {"username": "...", "password", "..."}

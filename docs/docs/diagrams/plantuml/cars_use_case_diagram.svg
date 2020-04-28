@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="972px" preserveAspectRatio="none" style="width:1616px;height:972px;" version="1.1" viewBox="0 0 1616 972" width="1616px" zoomAndPan="magnify"><defs><filter height="300%" id="fxdiajy8fq3ji" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="4.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="8.0" dy="8.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="36" lengthAdjust="spacingAndGlyphs" textLength="396" x="618" y="37.3711">Cars - Use case diagram</text><!--MD5=[fee662a292a0353a69bd162820bae93b]
+entity User--><ellipse cx="367" cy="80.2813" fill="#FEFECE" filter="url(#fxdiajy8fq3ji)" rx="16" ry="16" style="stroke: #A80036; stroke-width: 3.0;"/><path d="M367,96.2813 L367,150.2813 M341,112.2813 L393,112.2813 M367,150.2813 L341,180.2813 M367,150.2813 L393,180.2813 " fill="none" filter="url(#fxdiajy8fq3ji)" style="stroke: #A80036; stroke-width: 3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacingAndGlyphs" textLength="58" x="338" y="220.3477">User</text><ellipse cx="67.4975" cy="466.1847" fill="#F8E7C0" filter="url(#fxdiajy8fq3ji)" rx="55.4975" ry="30.9034" style="stroke: #2F4F4F; stroke-width: 3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacingAndGlyphs" textLength="70" x="32.4975" y="476.794">Login</text><ellipse cx="272.9533" cy="466.1847" fill="#F8E7C0" filter="url(#fxdiajy8fq3ji)" rx="80.9533" ry="30.9034" style="stroke: #2F4F4F; stroke-width: 3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacingAndGlyphs" textLength="106" x="219.9533" y="476.794">Register</text><ellipse cx="804.9533" cy="920.1847" fill="#F8E7C0" filter="url(#fxdiajy8fq3ji)" rx="80.9533" ry="30.9034" style="stroke: #2F4F4F; stroke-width: 3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacingAndGlyphs" textLength="106" x="751.9533" y="930.794">List cars</text><!--MD5=[7fe5f86c73095111e0d0f77e9a6ca253]
+entity Logged In User--><ellipse cx="1353" cy="402.2813" fill="#FEFECE" filter="url(#fxdiajy8fq3ji)" rx="16" ry="16" style="stroke: #A80036; stroke-width: 3.0;"/><path d="M1353,418.2813 L1353,472.2813 M1327,434.2813 L1379,434.2813 M1353,472.2813 L1327,502.2813 M1353,472.2813 L1379,502.2813 " fill="none" filter="url(#fxdiajy8fq3ji)" style="stroke: #A80036; stroke-width: 3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacingAndGlyphs" textLength="192" x="1257" y="542.3477">Logged In User</text><ellipse cx="1527.2254" cy="702.1847" fill="#F8E7C0" filter="url(#fxdiajy8fq3ji)" rx="68.2254" ry="30.9034" style="stroke: #2F4F4F; stroke-width: 3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacingAndGlyphs" textLength="88" x="1483.2254" y="712.794">Logout</text><ellipse cx="1128.7229" cy="702.1847" fill="#F8E7C0" filter="url(#fxdiajy8fq3ji)" rx="117.7229" ry="30.9034" style="stroke: #2F4F4F; stroke-width: 3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacingAndGlyphs" textLength="158" x="1049.7229" y="712.794">Create a car</text><!--MD5=[97ab183161fd5d1db7fba7485cf76add]
+entity Admin--><ellipse cx="829" cy="402.2813" fill="#FEFECE" filter="url(#fxdiajy8fq3ji)" rx="16" ry="16" style="stroke: #A80036; stroke-width: 3.0;"/><path d="M829,418.2813 L829,472.2813 M803,434.2813 L855,434.2813 M829,472.2813 L803,502.2813 M829,472.2813 L855,502.2813 " fill="none" filter="url(#fxdiajy8fq3ji)" style="stroke: #A80036; stroke-width: 3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacingAndGlyphs" textLength="78" x="790" y="542.3477">Admin</text><ellipse cx="682.8944" cy="702.1847" fill="#F8E7C0" filter="url(#fxdiajy8fq3ji)" rx="114.8944" ry="30.9034" style="stroke: #2F4F4F; stroke-width: 3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacingAndGlyphs" textLength="154" x="605.8944" y="712.794">Delete a car</text><!--MD5=[5af6d7c3e037f74f83175e2986cdce5e]
+link User to Login--><path d="M337.688,177.3513 C281.248,237.1793 157.8844,367.9433 99.2236,430.1233 " fill="none" id="User-&gt;Login" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="#2F4F4F" points="91.7256,438.0712,109.8955,430.4649,98.5866,430.7962,98.2554,419.4873,91.7256,438.0712" style="stroke: #2F4F4F; stroke-width: 2.0;"/><!--MD5=[e0ebca121273885364fa8679885dc51a]
+link User to Register--><path d="M343.036,227.3492 C324.248,290.9132 298.932,376.5533 284.448,425.5493 " fill="none" id="User-&gt;Register" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="#2F4F4F" points="281.53,435.4272,294.3042,420.4333,284.3647,425.8374,278.9605,415.8978,281.53,435.4272" style="stroke: #2F4F4F; stroke-width: 2.0;"/><!--MD5=[7fedd4ab3136cd350c6efd31a3105a6d]
+link User to List cars--><path d="M372.534,227.8673 C384.34,348.7293 420.912,577.7773 533,733.2813 C586.888,808.0403 680.914,862.0579 743.066,891.7785 " fill="none" id="User-&gt;List cars" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="#2F4F4F" points="752.756,896.3393,739.8785,881.4339,743.7086,892.0795,733.063,895.9097,752.756,896.3393" style="stroke: #2F4F4F; stroke-width: 2.0;"/><!--MD5=[9dcd261e871ab059ac3c9e798b439798]
+link Logged In User to Logout--><path d="M1413.856,549.4233 C1443.238,588.5993 1477.006,633.6233 1499.948,664.2133 " fill="none" id="Logged In User-&gt;Logout" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="#2F4F4F" points="1506.12,672.4413,1501.72,653.2413,1500.12,664.4413,1488.92,662.8413,1506.12,672.4413" style="stroke: #2F4F4F; stroke-width: 2.0;"/><!--MD5=[bc08078fe6b4b6cd377a03c2fe9a9624]
+link Logged In User to Create a car--><path d="M1274.656,549.4233 C1236.74,588.6933 1193.152,633.8393 1163.612,664.4333 " fill="none" id="Logged In User-&gt;Create a car" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="#2F4F4F" points="1156.418,671.8853,1174.6757,664.4921,1163.3637,664.691,1163.1648,653.379,1156.418,671.8853" style="stroke: #2F4F4F; stroke-width: 2.0;"/><!--MD5=[1334dc9d23a384c6379f8b7e1f375294]
+link Logged In User to List cars--><path d="M1350.46,549.7813 C1344.548,607.4333 1327.896,683.1012 1283,733.2813 C1180.686,847.6345 999.33,891.8721 891.836,908.5677 " fill="none" id="Logged In User-&gt;List cars" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="#2F4F4F" points="881.67,910.0989,900.6603,915.3303,891.5586,908.6103,898.2786,899.5085,881.67,910.0989" style="stroke: #2F4F4F; stroke-width: 2.0;"/><!--MD5=[50fd5d8decc7859425179d2280f5d12b]
+link Admin to List cars--><path d="M852.808,549.4793 C870.708,623.7293 887.94,735.8793 861,829.2813 C855.72,847.5837 845.442,865.7521 835.116,880.8548 " fill="none" id="Admin-&gt;List cars" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="#2F4F4F" points="828.724,889.8363,845.6779,879.808,834.5215,881.6883,832.6412,870.532,828.724,889.8363" style="stroke: #2F4F4F; stroke-width: 2.0;"/><!--MD5=[3f9fa888824507cd27f253ffa548970d]
+link Admin to Delete a car--><path d="M789.874,530.4533 C763.4,572.5233 729.286,626.7293 706.81,662.4472 " fill="none" id="Admin-&gt;Delete a car" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="#2F4F4F" points="701.358,671.1112,717.7159,660.1378,706.6842,662.6477,704.1742,651.6159,701.358,671.1112" style="stroke: #2F4F4F; stroke-width: 2.0;"/><!--MD5=[faa7f061dcd62ac387d29ce4a174f64d]
+link Admin to Create a car--><path d="M868.22,498.6113 C923.928,541.6913 1025.694,620.3913 1084.27,665.6913 " fill="none" id="Admin-&gt;Create a car" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="#2F4F4F" points="1092.588,672.1233,1083.2416,654.7841,1084.677,666.0064,1073.4547,667.4418,1092.588,672.1233" style="stroke: #2F4F4F; stroke-width: 2.0;"/><!--MD5=[58c08f1cbd4361f1f7ff95bd5976fc0f]
+link Delete a car to List cars--><path d="M689.228,733.4973 C695.642,759.7803 707.232,798.8295 725,829.2813 C736.518,849.0207 752.908,868.2287 767.856,883.7175 " fill="none" id="Delete a car-&gt;List cars" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="#2F4F4F" points="775.052,891.0085,768.1018,872.5776,768.0275,883.8911,756.714,883.8168,775.052,891.0085" style="stroke: #2F4F4F; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="26" lengthAdjust="spacingAndGlyphs" textLength="124" x="727" y="822.2715">«includes»</text><!--MD5=[933987b91d2b08b1b4941f3221fa6cec]
+reverse link User to Admin--><path d="M429.57,189.3492 C526.242,255.8892 709.128,381.7713 789.466,437.0693 " fill="none" id="User&lt;-Admin" style="stroke: #2F4F4F; stroke-width: 2.0;"/><polygon fill="none" points="421.614,200.8692,396.602,166.6572,437.49,177.8053,421.614,200.8692" style="stroke: #2F4F4F; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="26" lengthAdjust="spacingAndGlyphs" textLength="120" x="615" y="316.2715">«extends»</text><!--MD5=[523e5d64c27a88457decd3b06d33487d]
+@startuml
+
+title
+Cars - Use case diagram
+end title
+
+skinparam usecase {
+	BackgroundColor STRATEGY
+	ArrowColor DarkSlateGray
+	BorderColor DarkSlateGray
+	ActorBorderColor Black
+}
+
+:User: - -> (Login)
+:User: - -> (Register)
+:User: - -> (List cars)
+
+:Logged In User: - -> (Logout)
+:Logged In User: - -> (Create a car)
+:Logged In User: - -> (List cars)
+
+:Admin: - -> (List cars)
+:Admin: - -> (Delete a car)
+:Admin: - -> (Create a car)
+(Delete a car) - -> (List cars) : <<includes>>
+
+:User: <|- - :Admin: : <<extends>>
+
+@enduml
+
+PlantUML version 1.2020.07(Sun Apr 19 13:42:40 CEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.38
+Operating System: Windows 10
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

@@ -5,12 +5,12 @@ Cars - Step 09 - Authorization
 end title
 
 skinparam sequence {
-	BackgroundColor White
+	BackgroundColor STRATEGY
+	ParticipantBackgroundColor STRATEGY
 	ArrowColor DarkSlateGray
 	BorderColor DarkSlateGray
 	LifeLineBorderColor DarkSlateGray
 	ParticipantBorderColor DarkSlateGray
-	ParticipantBackgroundColor  White
 }
 
 Client -> Server: GET "/cars"

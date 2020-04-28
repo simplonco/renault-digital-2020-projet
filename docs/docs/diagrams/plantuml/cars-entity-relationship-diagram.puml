@@ -1,0 +1,51 @@
+@startuml
+
+title
+Cars - Entity Relationship diagram
+end title
+
+skinparam class {
+	BackgroundColor STRATEGY
+	ArrowColor DarkSlateGray
+	BorderColor DarkSlateGray
+}
+
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "cars" {
+  *id : INTEGER <<generated>>
+  --
+  *brand : VARCHAR(200)
+  *model : VARCHAR(200)
+}
+
+entity "cars_dealearships" {
+  *id_car : INTEGER <<FOREIGN KEY>>
+  *id_dealership : INTEGER <<FOREIGN KEY>>
+}
+
+entity "dealearships" {
+  *id : INTEGER <<generated>>
+  --
+  *name : VARCHAR(200)
+  address : VARCHAR(1000)
+}
+
+entity "owners" {
+  *id : INTEGER <<generated>>
+  --
+  *name : VARCHAR(200)
+}
+
+'cars "*" }o--o{ "*" cars_dealearships
+'cars_dealearships "*" }o--o{ "*" dealearships
+
+cars               "0..*"  ---  "1"     cars_dealearships
+cars_dealearships  "1 "    ---  "0..*"  dealearships
+cars               "0..*"  ---  "0..*"  owners
+
+@enduml
