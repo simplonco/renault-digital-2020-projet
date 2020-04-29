@@ -1,0 +1,35 @@
+@startuml
+
+
+title
+Cars - Class diagram
+end title
+
+skinparam class {
+	BackgroundColor STRATEGY
+	ArrowColor DarkSlateGray
+	BorderColor DarkSlateGray
+}
+
+skinparam linetype ortho
+
+class Voiture {
+    + id : int
+    + brand : String
+    + model : String
+    + mpg : double
+    getLitersPer100Kilometers() : String
+}
+
+class Publication {
+    + langue : Langue
+}
+
+enum Langue {
+    FR
+    EN
+}
+
+Voiture "0..*" ---o "0..*" Publication
+
+@enduml

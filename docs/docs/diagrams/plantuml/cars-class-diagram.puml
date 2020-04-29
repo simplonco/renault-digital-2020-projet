@@ -12,24 +12,47 @@ skinparam class {
 
 skinparam linetype ortho
 
-class Car {
+class Voiture {
     + id : int
     + brand : String
     + model : String
+    + mpg : double
+    getLitersPer100Kilometers() : String
 }
 
-class Owner {
-    + id : int
-    + name : String
+class Roue {
 }
 
-class Dealership {
-    + id : int
-    + name : String
-    + address : String
+class Personne {
+    + adresse
+    + ...
 }
 
-Car "0..*"  ---*  "0..1" Owner      : "< owns"
-Car "0..*"  ---*  "0..*" Dealership : "< sells"
+Voiture          o--- "4"     Roue
+Voiture "0..n  " ---o "0..1"  Personne : "< est propriétraire"
+
+package cities {
+    class Country {
+        + language : Language
+    }
+    class Region {
+    }
+    enum Language {
+        FR
+        EN
+    }
+    Country *-- Region
+}
+
+package auth {
+    class Utilisateur {
+        + username
+        + password
+    }
+    class Role {
+    }
+    Utilisateur "*" o-- "*" Role
+    Personne ---|> Utilisateur
+}
 
 @enduml

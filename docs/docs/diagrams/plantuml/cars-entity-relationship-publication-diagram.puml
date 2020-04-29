@@ -16,36 +16,31 @@ hide circle
 ' avoid problems with angled crows feet
 skinparam linetype ortho
 
-entity "cars" {
-  *id : INTEGER <<generated>>
+entity "voitures" {
+  *id : SERIAL
   --
   *brand : VARCHAR(200)
   *model : VARCHAR(200)
+  *mpg : DOUBLE
 }
 
-entity "cars_dealearships" {
+entity "voitures_publications" {
   *id_car : INTEGER <<FOREIGN KEY>>
   *id_dealership : INTEGER <<FOREIGN KEY>>
 }
 
-entity "dealearships" {
+entity "publication" {
   *id : INTEGER <<generated>>
   --
   *name : VARCHAR(200)
-  address : VARCHAR(1000)
-}
-
-entity "owners" {
-  *id : INTEGER <<generated>>
-  --
-  *name : VARCHAR(200)
+  date : DATE
+  country : CHAR(2)
 }
 
 'cars "*" }o--o{ "*" cars_dealearships
 'cars_dealearships "*" }o--o{ "*" dealearships
 
-cars               "0..*"  ---  "1"     cars_dealearships
-cars_dealearships  "1 "    ---  "0..*"  dealearships
-cars               "0..*"  ---  "0..*"  owners
+voitures               "0..*"  ---  "1"     voitures_publications
+voitures_publications  "1 "    ---  "0..*"  publication
 
 @enduml

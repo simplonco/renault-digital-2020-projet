@@ -41,7 +41,9 @@ public class CarsController extends HttpServlet {
     }
 
     /**
-     * Crée une nouvelle voiture en base de donnée à partir de la voiture donnée. Cette méthode est authentifée pour le {@link com.renault.models.Role} : "USER".
+     * Crée une nouvelle voiture en base de donnée à partir de la voiture donnée.
+     * <p>
+     * Cette méthode est authentifée pour le {@link com.renault.models.Role} : "USER".
      *
      * @param car le contenu de la voiture à créer
      */
@@ -51,7 +53,9 @@ public class CarsController extends HttpServlet {
     }
 
     /**
-     * Supprime une voiture en base de donnée à partir de l'id donné. Cette méthode est authentifée pour le {@link com.renault.models.Role} : "ADMIN".
+     * Supprime une voiture en base de donnée à partir de l'id donné.
+     * <p>
+     * Cette méthode est authentifée pour le {@link com.renault.models.Role} : "ADMIN".
      *
      * @param id l'id de la voiture à supprimer
      */

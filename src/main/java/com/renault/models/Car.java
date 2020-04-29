@@ -78,6 +78,8 @@ public class Car {
 
     /**
      * Retourne la consommation en litres par 100 km, le calcul est ...
+     * <p>
+     * Description plus longue
      *
      * @return la consommation en litres par 100 km
      * @see #mpg
