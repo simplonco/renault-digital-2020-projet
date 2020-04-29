@@ -288,12 +288,19 @@ L'analyse technique défini les concepts techniques avant de les implémenter.
 La documentation technique est une partie importante du développement logiciel, elle accompagne le logiciel pour expliquer le "quoi" alors que le code défini le "comment" :
 
 - La documentation technique est écrite dans le code, vous pouvez l'extraire pour le mettre dans votre rapport
+    - Voir :
+        - src\main\java\com\renault\models\package-info.java
+        - com.renault.models.Car.mpg
+        - com.renault.models.Car.getLitersPer100Kilometers
+        - com.renault.controllers.CarsController.createCar
+        - com.renault.controllers.CarsController.deleteCar
     - Java (Javadoc) : https://www.oracle.com/java/technologies/javase/javadoc-tool.html
         - Exécuter `./gradlew javadoc` pour générer la documentation des classes Java
         - Ouvrir le fichier "build/docs/javadoc/index.html"
     - JavaScript (JSDoc) : https://jsdoc.app/about-getting-started.html
         - Voir https://www.npmjs.com/package/jsdoc
         - Voir https://onury.io/docma/
+    - Vous pouvez aussi utiliser [Github Pages](https://pages.github.com/) pour faire l'hébergement de votre javadoc
 - Example d'excellente documentation technique : https://microsoft.github.io/language-server-protocol/specifications/specification-3-14/
 
 Bonus :

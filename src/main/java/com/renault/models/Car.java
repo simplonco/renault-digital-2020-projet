@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Entité principale de l'application ...
+ */
 @Entity(name = "cars")
 public class Car {
 
@@ -24,6 +27,13 @@ public class Car {
     @Column
     @NotNull
     private String model;
+
+    /**
+     * La consommation en "miles per gallon"
+     */
+    @Column
+    @NotNull
+    private double mpg;
 
     public Car() {
         // java bean
@@ -46,16 +56,34 @@ public class Car {
         this.brand = brand;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
-
     public String getBrand() {
         return brand;
     }
 
+    public void setModel(String model) {
+        this.model = model;
+    }
+
     public String getModel() {
         return model;
+    }
+
+    public double getMpg() {
+        return mpg;
+    }
+
+    public void setMpg(double mpg) {
+        this.mpg = mpg;
+    }
+
+    /**
+     * Retourne la consommation en litres par 100 km, le calcul est ...
+     *
+     * @return la consommation en litres par 100 km
+     * @see #mpg
+     */
+    public double getLitersPer100Kilometers() {
+        return mpg * 2;
     }
 
     @Override
