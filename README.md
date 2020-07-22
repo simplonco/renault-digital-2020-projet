@@ -136,7 +136,7 @@ Nous allons implémenter cette fonctionnalité en 2 parties : (1) l'authentifica
 
 L'authentification consiste à la vérification de l'identité (comprend aussi la création et la sécurisation), voir [https://en.wikipedia.org/wiki/Authentication](https://en.wikipedia.org/wiki/Authentication).
 
-![Cars - Step 09 - Authentification - Sequence Diagram](docs/cars-step-09-authentification-sequence-diagram.svg)
+![Cars - Step 09 - Authentification - Sequence Diagram](docs/docs/diagrams/plantuml/cars_authentification_sequence_diagram.svg)
 
 Référence : [https://www.baeldung.com/spring-security-login-angular](https://www.baeldung.com/spring-security-login-angular)
 
@@ -161,7 +161,7 @@ Référence : [https://www.baeldung.com/spring-security-login-angular](https://w
 
 L'autorisation est la spécification et application des droits liés à une identité (précédemment authentifiée), voir [https://en.wikipedia.org/wiki/Authorization](https://en.wikipedia.org/wiki/Authorization).
 
-![Cars - Step 09 - Authorization - Sequence Diagram](docs/cars-step-09-authorization-sequence-diagram.svg)
+![Cars - Step 09 - Authorization - Sequence Diagram](docs/docs/diagrams/plantuml/cars-step-09-authorization-sequence-diagram.svg)
 
 Référence : [https://www.baeldung.com/spring-security-login-angular](https://www.baeldung.com/spring-security-login-angular)
 
